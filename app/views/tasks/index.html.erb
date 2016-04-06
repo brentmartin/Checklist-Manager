@@ -1,7 +1,9 @@
 <h2>All Tasks</h2>
+<hr/>
 
+<%= link_to "New Task", new_task_path %>
 <ul>
 <% @tasks.each do |task| %>
-  <li><%= task.description %> <small><%= task.completed %></small></li>
+  <li><%= task.description %> <small><%= task.completed %></small><%= link_to "Delete", task_path(task), method: :DELETE %></li>
 <% end %>
 </ul>
