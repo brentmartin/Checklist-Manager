@@ -1,8 +1,3 @@
-<ul>
-<% @tasks.each do |task| %>
-  <li><%= task.description %> <small><%= task.completed %></small><%= link_to "Delete", task_path(task), method: :DELETE %></li>
-<% end %>
-</ul>
 <body>
 
   <span id="tasks-display">
@@ -21,12 +16,28 @@
     <article>
       <h2>Currently working on</h2>
       <div class="open-list">
+        <% @tasks.each do |task| %>
+          <div class="items">
+            <small class ="checkbox"><%= task.completed %></small>
+            <p class="body"><%= task.description %></p>
+            <small class="link"><%= link_to "Delete", task_path(task), method: :DELETE %></small>
+          </div>
+        <% end %>
       </div>
 
       <hr class="line" />
 
       <h2>Completed</h2>
       <div class="close-list">
+        <% @tasks.each do |task| %>
+          <div class="items">
+            <span>
+              <p><%= task.description %></p>
+              <small><%= task.completed %></small>
+              <p class="link"><%= link_to "Delete", task_path(task), method: :DELETE %></p>
+            </span>
+          </div>
+        <% end %>
       </div>
     </article>
 
