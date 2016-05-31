@@ -1,6 +1,3 @@
-<h2>All Tasks</h2>
-<hr/>
-
 <%= link_to "New Task", new_task_path %>
 <ul>
 <% @tasks.each do |task| %>
@@ -8,6 +5,10 @@
 <% end %>
 </ul>
 <body>
+
+  <span id="tasks-display">
+    <h1>Checklist</h1>
+  </span>
 
   <section class="content-left">
     <aside>
