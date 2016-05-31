@@ -123,6 +123,16 @@ html {
     }
   }
 
+  hr.line {
+    width: 100%;
+  }
+
+
+  hr.space {
+    width: 100%;
+    border: none;
+  }
+
   a.read-more {
     display: inline-block;
     font-family: $serif;
