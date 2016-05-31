@@ -7,8 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav>
-  </nav>
+  <header>
       <a><%= link_to "Home", root_path %></a>
       <a>
         <% if signed_in? %>
@@ -17,6 +16,7 @@
           <%= link_to "Sign In", sign_in_path %>
         <% end %>
       </a>
+  </header>
 <%= flash[:notice] %>
 <%= flash[:alert] %>
 
