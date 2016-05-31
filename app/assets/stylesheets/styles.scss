@@ -190,6 +190,7 @@ html {
   // BODY styles
   body {
     background-color: #fafafa;
+    margin: 0;
 
     .content-right {
       @include outer-container;
