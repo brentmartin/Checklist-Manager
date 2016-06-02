@@ -42,6 +42,9 @@ class TasksController < ApplicationController
   end
 
   private
+  def get_task
+    Task.find(params.fetch(:id))
+  end
 
   def task_params
     params.require(:task).permit(:description, :position, :completed, :user_id, :id)
