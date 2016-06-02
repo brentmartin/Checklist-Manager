@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :authenticate_user, only: [:new, :create, :destroy] #TODO: Add Edit and Update
+  before_action :authenticate_user, only: [:new, :create, :destroy, :edit, :update, :put]
 
   def index
     @tasks = Task.all
@@ -24,7 +24,6 @@ class TasksController < ApplicationController
     end
   end
 
-  #TODO: Add Edit and Update Actions
 
   def update
     @task = get_task
