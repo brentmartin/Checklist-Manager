@@ -9,6 +9,10 @@ class TasksController < ApplicationController
     @task = Task.new
   end
 
+  def edit
+    @task = get_task
+  end
+
   def create
     @task = Task.new(task_params)
 
