@@ -26,6 +26,14 @@ class TasksController < ApplicationController
 
   #TODO: Add Edit and Update Actions
 
+  def update
+    @task = get_task
+    @task.update(task_params)
+
+    flash[:notice] = "Completed Task"
+    redirect_to :back
+  end
+
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
