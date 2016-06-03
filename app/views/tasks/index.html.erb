@@ -16,13 +16,14 @@
     <article>
       <h2>Currently working on</h2>
       <div class="open-list">
-        <% @tasks.each do |task| %>
+        <% @tasks.incomplete.each do |task| %>
           <div class="items">
-            <small class ="checkbox"><%= task.completed %></small>
+            <small class ="checkbox">
+            </small>
             <p class="body"><%= task.description %></p>
             <small class="link"><%= link_to "Delete", task_path(task), method: :DELETE %></small>
           </div>
-        <hr class="space" />
+          <hr class="space" />
         <% end %>
       </div>
 
@@ -30,12 +31,13 @@
 
       <h2>Completed</h2>
       <div class="close-list">
-        <% @tasks.each do |task| %>
+        <% @tasks.complete.each do |task| %>
           <div class="items">
             <span>
-              <p><%= task.description %></p>
-              <small><%= task.completed %></small>
-              <p class="link"><%= link_to "Delete", task_path(task), method: :DELETE %></p>
+              <small class="checkbox">
+              </small>
+              <p class="body"> <%= task.description %> </p>
+              <small class="link"><%= link_to "Delete", task_path(task), method: :DELETE %></small>
             </span>
           </div>
         <hr class="space" />
