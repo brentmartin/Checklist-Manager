@@ -19,6 +19,10 @@
         <% @tasks.incomplete.each do |task| %>
           <div class="items">
             <small class ="checkbox">
+              <%= form_for task do |f| %>
+                <%= f.hidden_field(:completed, value: true) %>
+                <%= f.submit "mark complete"%>
+              <% end %>
             </small>
             <p class="body"><%= task.description %></p>
             <small class="link"><%= link_to "Delete", task_path(task), method: :DELETE %></small>
@@ -35,6 +39,10 @@
           <div class="items">
             <span>
               <small class="checkbox">
+                <%= form_for task do |f| %>
+                  <%= f.hidden_field(:completed, value: false) %>
+                  <%= f.submit "mark incomplete"%>
+                <% end %>
               </small>
               <p class="body"> <%= task.description %> </p>
               <small class="link"><%= link_to "Delete", task_path(task), method: :DELETE %></small>
